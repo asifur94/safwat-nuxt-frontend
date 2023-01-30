@@ -1,15 +1,1 @@
-export default {
-  "@vite/client": {
-    "isEntry": true,
-    "file": "@vite/client",
-    "css": [],
-    "module": true,
-    "resourceType": "script"
-  },
-  "/Users/asif/Downloads/Web Design & Development/Client project/safwat-nuxt-frontend/node_modules/nuxt/dist/app/entry.mjs": {
-    "resourceType": "script",
-    "module": true,
-    "isEntry": true,
-    "file": "/Users/asif/Downloads/Web Design & Development/Client project/safwat-nuxt-frontend/node_modules/nuxt/dist/app/entry.mjs"
-  }
-}
+export { default } from "file:///Users/asif/Downloads/Web%20Design%20&%20Development/Client%20project/safwat-nuxt-frontend/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

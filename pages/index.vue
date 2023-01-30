@@ -109,7 +109,7 @@ export default {
         }
     },
   mounted(){
-  axios.get('http://127.0.0.1:8001/api/product')
+  axios.get('http://127.0.0.1:8000/api/product')
       .then(response => {
     console.log(response.data);
     this.products = response.data

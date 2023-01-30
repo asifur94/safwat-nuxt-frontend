@@ -8,6 +8,7 @@ import { provider, isWindows } from 'file:///Users/asif/Downloads/Web%20Design%2
 import { eventHandler, setHeaders, sendRedirect, defineEventHandler, handleCacheHeaders, createEvent, getRequestHeader, getRequestHeaders, setResponseHeader, createApp, createRouter as createRouter$1, lazyEventHandler, toNodeListener, getQuery, createError } from 'file:///Users/asif/Downloads/Web%20Design%20&%20Development/Client%20project/safwat-nuxt-frontend/node_modules/h3/dist/index.mjs';
 import { createRenderer } from 'file:///Users/asif/Downloads/Web%20Design%20&%20Development/Client%20project/safwat-nuxt-frontend/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import devalue from 'file:///Users/asif/Downloads/Web%20Design%20&%20Development/Client%20project/safwat-nuxt-frontend/node_modules/@nuxt/devalue/dist/devalue.mjs';
+import { renderToString } from 'file:///Users/asif/Downloads/Web%20Design%20&%20Development/Client%20project/safwat-nuxt-frontend/node_modules/vue/server-renderer/index.mjs';
 import { withoutBase, parseURL, withQuery, joinURL } from 'file:///Users/asif/Downloads/Web%20Design%20&%20Development/Client%20project/safwat-nuxt-frontend/node_modules/ufo/dist/index.mjs';
 import destr from 'file:///Users/asif/Downloads/Web%20Design%20&%20Development/Client%20project/safwat-nuxt-frontend/node_modules/destr/dist/index.mjs';
 import { snakeCase } from 'file:///Users/asif/Downloads/Web%20Design%20&%20Development/Client%20project/safwat-nuxt-frontend/node_modules/scule/dist/index.mjs';
@@ -604,6 +605,31 @@ globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
 const getClientManifest = () => import('/Users/asif/Downloads/Web Design & Development/Client project/safwat-nuxt-frontend/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getStaticRenderedHead = () => Promise.resolve().then(function () { return _virtual__headStatic$1; }).then((r) => r.default || r);
+const getServerEntry = () => import('/Users/asif/Downloads/Web Design & Development/Client project/safwat-nuxt-frontend/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getSSRRenderer = lazyCachedFunction(async () => {
+  const manifest = await getClientManifest();
+  if (!manifest) {
+    throw new Error("client.manifest is not available");
+  }
+  const createSSRApp = await getServerEntry();
+  if (!createSSRApp) {
+    throw new Error("Server bundle is not available");
+  }
+  const options = {
+    manifest,
+    renderToString: renderToString$1,
+    buildAssetsURL
+  };
+  const renderer = createRenderer(createSSRApp, options);
+  async function renderToString$1(input, context) {
+    const html = await renderToString(input, context);
+    if (process.env.NUXT_VITE_NODE_OPTIONS) {
+      renderer.rendererContext.updateManifest(await getClientManifest());
+    }
+    return `<${appRootTag} id="${appRootId}">${html}</${appRootTag}>`;
+  }
+  return renderer;
+});
 const getSPARenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
   const options = {
@@ -647,19 +673,19 @@ const renderer = defineRenderHandler(async (event) => {
     url = url.substring(0, url.lastIndexOf("/")) || "/";
     event.node.req.url = url;
   }
-  getRouteRules(event);
+  const routeOptions = getRouteRules(event);
   const ssrContext = {
     url,
     event,
     runtimeConfig: useRuntimeConfig(),
-    noSSR: !!true   ,
+    noSSR: !!event.node.req.headers["x-nuxt-no-ssr"] || routeOptions.ssr === false || (false),
     error: !!ssrError,
     nuxt: void 0,
     /* NuxtApp */
     payload: ssrError ? { error: ssrError } : {},
     islandContext
   };
-  const renderer = await getSPARenderer() ;
+  const renderer = ssrContext.noSSR ? await getSPARenderer() : await getSSRRenderer();
   const _rendered = await renderer.renderToString(ssrContext).catch((error) => {
     throw !ssrError && ssrContext.payload?.error || error;
   });

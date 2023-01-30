@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
 
 
-ssr: process.env.NODE_ENV === 'production' ? true : false // for hot reloading
+// ssr: process.env.NODE_ENV === 'production' ? true : false // for hot reloading
   })
 
   
