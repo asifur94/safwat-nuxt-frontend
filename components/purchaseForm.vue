@@ -1,5 +1,4 @@
 <template>
-
     <section class="text-end">
         <div  class="swiper-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-free-mode swiper-rtl swiper-backface-hidden mb-14 truncate"  >                 
 
@@ -8,44 +7,44 @@
            <div v-show="isShow" >
             <div class="container text-center" >
                 <div class=" border-solid border-2  border-slate-100 rounded-lg  px-2 pb-3" >
-                    <h1 class=" text-2xl text-center mb-4 mt-3"><font style="vertical-align: inherit;"><font >Order it now</font></font></h1>
+                    <h1 class=" text-2xl text-center mb-4 mt-3"><span><span>Order it now</span></span></h1>
                     <form @submit.prevent="purchase" class="text-end">
                         <div class="mb-2   selt-frm  " >
                             <input v-model="name" class=" pr-3 w-full pl-8 py-3" type="text" placeholder="The name" style="background: #f2f2f2;border-style: none;"></div>
                         <div class="mb-2 relative  selt-frm "  ><input v-model="phone" class=" pr-3 w-full pl-8 form-control py-3" type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
-                            <div class="flex items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;" ><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">05&nbsp;&nbsp;</font></font></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
+                            <div class="flex items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;" ><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">05&nbsp;&nbsp;</span></span></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
                         </div>
                         <div class="mb-2 frm-s form-select relative py-3 pr-3 pl-8 selt-frm " >
                             <select v-model="address" class="w-full text-end" style="background: #f2f2f2;border-style: none;">
-                                <option value="Jaddah"><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">Jaddah</font></font></option>
-                                <option value="Makkah"><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">Makkah</font></font></option>
-                                <option value="Riyadh"><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">Riyadh</font></font></option>
+                                <option value="Jaddah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Jaddah</span></span></option>
+                                <option value="Makkah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Makkah</span></span></option>
+                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Riyadh</span></span></option>
                         </select><i class="fas fa-chevron-down" style="position: absolute;top: 50%;transform: translateY(-50%);left: 20px;"></i></div>
     
                         <div v-for="product in products" :key="product.id" class="frm-s flex justify-between selt-frm-txt mt-3"  >
                             <span>
-                                <font class="vertical-align: inherit;">
-                                    <font class="vertical-align: inherit;">
+                                <span class="vertical-align: inherit;">
+                                    <span class="vertical-align: inherit;">
                                       {{ product.name }}
-                                    </font>
-                                </font>
+                                    </span>
+                                </span>
                             </span>
                             <span>
-                                <font class="vertical-align: inherit;">
-                                    <font class="vertical-align: inherit;">
+                                <span class="vertical-align: inherit;">
+                                    <span class="vertical-align: inherit;">
                                      <div class="flex items-center gap-2">
                                         <span @click="qntyIncrementAndDecrement(product.id,'increment')" class="bg-green-500 text-white py-1 px-2 rounded cursor-pointer">+</span>
                                         {{ product.quantity }}
                                         <span @click="qntyIncrementAndDecrement(product.id,'decrement')" class="bg-red-500 py-1 text-white px-2 rounded cursor-pointer">-</span>
                                      </div>
-                                    </font>
-                                </font>
+                                    </span>
+                                </span>
                             </span>
                         </div>
-                        <div class="flex justify-between selt-frm-txt mt-3"  ><span><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">The price includes tax</font></font></span><span><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">100 SAR</font></font></span></div>
-                        <div class="flex justify-between selt-frm-txt mt-3"  ><span><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">Fast shipping</font></font></span><span><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">Complimentary</font></font></span></div>
+                        <div class="flex justify-between selt-frm-txt mt-3"  ><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">The price includes tax</span></span></span><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">100 SAR</span></span></span></div>
+                        <div class="flex justify-between selt-frm-txt mt-3"  ><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Fast shipping</span></span></span><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Complimentary</span></span></span></div>
                         <div class="selt-frm-txt-d "  ></div>
-                        <div class="flex justify-between selt-frm-txt mt-3"  ><span style="font-weight: bold;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Total</font></font></span><span class="font-weight: bold;"><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">{{ totalPrice.totalPrice }} SAR</font></font></span></div>
+                        <div class="flex justify-between selt-frm-txt mt-3"  ><span style="font-weight: bold;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Total</span></span></span><span class="font-weight: bold;"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">{{ totalPrice.totalPrice }} SAR</span></span></span></div>
                         
                         <div class="mt-3"><button type="submit" class="dc-btn">Purchase</button></div>
                         
@@ -62,7 +61,7 @@
 
 
 
-    <!-- <section class="flex justify-start"> 
+    <section class="flex justify-start"> 
         <div class="w-24 ml-6 mt-12"><img src="~/assets/img/Logo.png"></div> 
     </section>
 
@@ -99,7 +98,7 @@
             </div>
             <div class=" mt-3"><button class="dc-btn">Purchase</button></div>
         </div>
-    </section> -->
+    </section>
 
 
 </template>

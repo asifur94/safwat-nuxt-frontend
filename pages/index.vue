@@ -28,18 +28,18 @@
                                         
                                     
                 </div>
-                <span class="flex text-center p-1 font-xs me-1"><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">48,120</font></font></span>
+                <span class="flex text-center p-1 font-xs me-1"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">48,120</span></span></span>
             </div>
-            <h2  class="text-3xl red-700  mb-3"><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">Safwat Al Jouf olive oil</font></font></h2>
-            <h3  class="text-base mb-4"><font class="vertical-align: inherit;"><font class="vertical-align: inherit;">Excellent virgin first squeeze</font></font></h3>
-            <p ><font class="text-base vertical-align: inherit;"><font class="vertical-align: inherit;">Safwat Al-Jouf olive oil, like pure gold, we picked from our best crops, our farms in Al-Jouf, where 100% organic extra-virgin olive oil is produced by first cold pressing.</font></font></p><img src="~/assets/img/Rectangle.png" class="w-full mt-5 ">
+            <h2  class="text-3xl red-700  mb-3"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Safwat Al Jouf olive oil</span></span></h2>
+            <h3  class="text-base mb-4"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Excellent virgin first squeeze</span></span></h3>
+            <p ><span class="text-base vertical-align: inherit;"><span class="vertical-align: inherit;">Safwat Al-Jouf olive oil, like pure gold, we picked from our best crops, our farms in Al-Jouf, where 100% organic extra-virgin olive oil is produced by first cold pressing.</span></span></p><img src="~/assets/img/Rectangle.png" class="w-full mt-5 ">
         </div>
     </section>
     
 
     <section class="mt-4 text-end ">
         <div class="container" >
-            <h3 class="text-base font-bold mb-4"><font ><font >Width</font></font></h3>
+            <h3 class="text-base font-bold mb-4"><span ><span >Width</span></span></h3>
             <div  class="swiper-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-free-mode swiper-rtl swiper-backface-hidden mb-14 truncate"  >                 
 
             <section
@@ -49,7 +49,7 @@
                 <div>
                     <NuxtLink v-on:click="count += 1">
                         <img :src="product.image" alt="" class="h-52 w-52 object-cover rounded-t-xl">
-                        <h1>{{ product.name }}</h1>
+                       
                     </NuxtLink>
                     <div class="px-4 py-3 w-52">
             
@@ -58,7 +58,7 @@
                         <div class="flex items-center">
                             <p class="text-lg font-semibold text-red-700 cursor-auto my-3">{{ product.price }}</p>
                             <del>
-                                <p class="text-sm text-gray-600 cursor-auto ml-2">$199</p>
+                                <p class="text-sm text-gray-600 cursor-auto ml-2">{{product.DiscountPrice}}</p>
                             </del>
                             <div class="ml-auto">
             
@@ -73,7 +73,9 @@
                                         </path>
                                     </svg>
                                 </button>
-                                <p v-else class="bg-green-500 text-white py-1 px-2 text-sm">Added</p>
+                                <p v-else class=" text-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 flex justify-end chk-icn h-6">
+                                    <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                                  </svg></p>
             
                             </div>
                         </div>
@@ -82,7 +84,36 @@
             </div>
 
             </section>
- 
+
+
+            <!-- <section>
+                <div class="d-flex justify-content-between align-items-center" >
+                  <div class="flex justify-between  items-center" >
+        
+                <div  class="flex justify-between items-center" style="width: 250px;padding: 10px 25px;border-radius: 5px;color: rgb(0,0,0);border: 1px solid #F2F2F2 ;" ><svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                </svg>
+                <span id="quantity-text" style="font-size: 18px;"><span ><span >   
+                  
+
+                  </span></span></span>
+                  
+                  <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+                </svg>
+                </div>
+        
+                        
+                           
+                <h3 class="text-base font-bold "><span ><span >Quantity</span></span></h3>
+                 </div>
+             
+               <button class="dc-btn">Order Now</button>
+        
+                 </div>
+              </section> -->
+
+
                 <WhatsappForm/>
 
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>

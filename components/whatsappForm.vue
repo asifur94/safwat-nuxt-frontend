@@ -3,7 +3,7 @@
     <section class="text-end">
         <div style="border-bottom: 1px solid #F2F2F2;margin-top: 25px;margin-bottom: 15px;" ></div>
             
-            <h3 style="font-size: 16px;font-weight: bold;"><font ><font >Save this offer for later</font></font></h3>
+            <h3 style="font-size: 16px;font-weight: bold;"><span><span >Save this offer for later</span></span></h3>
 
             <button class="bg-gray-200 dc-btn-2 " @click="isShow = !isShow"> Send it to me via WhatsApp  </button>
             <div v-show="isShow">
