@@ -1,12 +1,13 @@
 <template>
-
     
-    <productAll v-for="product in products" :key="product.id" :product="product">
+    <section
+        class="w-fit   mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
 
-                    
-
-    </productAll>
-
+        <!--   ✅ Product card 1 - Starts Here 👇 -->
+        <product v-for="product in products" :key="product.id" :product="product" />
+    
+    </section>
+    
 
 </template>
 
@@ -22,7 +23,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('http://127.0.0.1:8000/api/product')
+        axios.get('http://sawfat-laravel.test/api/product')
             .then(response => {
                 console.log(response.data);
                 this.products = response.data
