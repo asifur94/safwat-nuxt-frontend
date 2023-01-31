@@ -37,56 +37,53 @@
     </section>
     
 
+
+
+
     <section class="mt-4 text-end ">
         <div class="container" >
-            <h3 class="text-base font-bold mb-4"><span ><span >Width</span></span></h3>
-            <div  class="swiper-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-free-mode swiper-rtl swiper-backface-hidden mb-14 truncate"  >                 
+            <h3 class="text-base font-bold mb-4">Width</h3>
+            <div  class=" mb-14 truncate"  >                 
 
-            <section
-                class="w-fit   mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+            <section class="flex">
 
-            <div v-for="product in products" :key="product.id" class="w-52 bg-white shadow-md flex justify-end rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-                <div>
-                    <NuxtLink v-on:click="count += 1">
-                        <img :src="product.image" alt="" class="h-52 w-52 object-cover rounded-t-xl">
-                       
-                    </NuxtLink>
-                    <div class="px-4 py-3 w-52">
-            
-                        <p class="text-lg font-bold text-black truncate block capitalize">{{ product.name }}</p>
-                        <span class="text-gray-400 mr-3 uppercase text-xs">{{ product.description }} </span>
-                        <div class="flex items-center">
-                            <p class="text-lg font-semibold text-red-700 cursor-auto my-3">{{ product.price }}</p>
-                            <del>
-                                <p class="text-sm text-gray-600 cursor-auto ml-2">{{product.DiscountPrice}}</p>
-                            </del>
-                            <div class="ml-auto">
-            
-                                <button v-if="!this.adtProducts.find((el)=>el.id == product.id)" @click="addToCart(product)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="cursor-pointer bi bi-bag-plus" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z">
-                                        </path>
-                                        <path
-                                            d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z">
-                                        </path>
-                                    </svg>
-                                </button>
-                                <p v-else class=" text-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 flex justify-end chk-icn h-6">
-                                    <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                                  </svg></p>
-            
-                            </div>
+             <div class="w-fit   mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"></div>
+                <div v-for="product in products" :key="product.id" class=" prbt  " >
+                    
+                        
+                        <div class="cprbt " >
+                            <div class=" prdtgg   "  >
+                                <div class=" mt-2  "  >
+                                    <div class=" prdimg1 w-20  "><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >4 liters</span></span><br></span></div>
+                                    <div class=" prdimg2 w-20  " ><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >4 liters</span></span><br></span></div>
+                                    <div class=" prdimg3 w-20 " ><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >4 liters</span></span><br></span></div>
+                                </div>
+                                <div class="mt-28">
+                                    <h3 class="text-base mr-2">{{ product.name }}</h3>
+                                    <h4 class="text-xs mr-2">{{ product.description }}</h4>
+                                    <p class="text-gray-500 font-normal mr-1 mt-2 text-base line-through">SAR {{product.DiscountPrice}}</p>
+                                    <p class="text-base font-medium mr-1  text-red-700 cursor-auto ">SAR {{ product.price }}</p>
+                                    
+                                </div>
+                                
+                            </div> 
                         </div>
-                    </div>
-                </div>
+                        <div class="crtbtnn flex">
+            
+                            <button v-if="!this.adtProducts.find((el)=>el.id == product.id)" @click="addToCart(product)">
+                                <div class="flex-1 ml-3 mt-5"><span class="befrcrt"><span class="dtbtn">.</span></span></div>
+                                
+                            </button>
+                            <div v-else class="abtnw" ><span class=" aftercrt"> <span class="atbtn">.</span></span></div>
+        
+                        </div>
+                
             </div>
 
             </section>
 
-
-            <!-- <section>
+              
+            <!-- <section >
                 <div class="d-flex justify-content-between align-items-center" >
                   <div class="flex justify-between  items-center" >
         
@@ -102,13 +99,13 @@
                   <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
                 </svg>
                 </div>
-        
-                        
+               
+               
                            
                 <h3 class="text-base font-bold "><span ><span >Quantity</span></span></h3>
                  </div>
              
-               <button class="dc-btn">Order Now</button>
+              
         
                  </div>
               </section> -->
@@ -150,7 +147,7 @@ export default {
     mounted(){
         axios.get('http://sawfat-laravel.test/api/product')
         .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
           this.products = response.data.products
        })  
     },
@@ -159,8 +156,13 @@ export default {
             this.adtProducts = [...this.adtProducts, { ...product, quantity: 1 }];
             this.totalPrice.totalPrice = this.adtProducts.reduce((prev, current) => Number(prev) + Number(current.price * current.quantity), 0)  
             
-        }
-    }
+        },
+        
+    },
+    
+    
+        
 };
 
 </script>
+

@@ -9,7 +9,7 @@
                 <div class=" border-solid border-2  border-slate-100 rounded-lg  px-2 pb-3" >
                     <h1 class=" text-2xl text-center mb-4 mt-3"><span><span>Order it now</span></span></h1>
                     <form @submit.prevent="purchase" class="text-end">
-                        <div class="mb-2   selt-frm  " >
+                        <div  class="mb-2   selt-frm  " >
                             <input v-model="name" class=" pr-3 w-full pl-8 py-3" type="text" placeholder="The name" style="background: #f2f2f2;border-style: none;"></div>
                         <div class="mb-2 relative  selt-frm "  ><input v-model="phone" class=" pr-3 w-full pl-8 form-control py-3" type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
                             <div class="flex items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;" ><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">05&nbsp;&nbsp;</span></span></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
@@ -53,8 +53,8 @@
 
                 </div>
             </div>
-</div>
-           </div>
+         </div>
+    </div>
       
    
     </section>
