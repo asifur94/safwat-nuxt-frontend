@@ -1,10 +1,22 @@
+<script setup>
+const { locale } = useI18n()
+</script>
 <template>
 
 
     <section>
         <div class="container-fluid pl-0 pr-0" ><img class="w-full" src="~/assets/img/hero.png" ></div>
     </section>
-
+<div>
+    <form>
+        <select v-model="locale">
+            <option value="en">en</option>
+            <option value="ar">ar</option>
+        </select>
+        <h1>{{ $t('hello') }}</h1>
+        <p>{{ $t('welcome') }}</p>
+    </form>
+</div>
 
     <section class="text-end ">
         <div class="container" >
@@ -83,19 +95,20 @@
             </section>
 
               
-            <!-- <section >
+            <section >
                 <div class="d-flex justify-content-between align-items-center" >
                   <div class="flex justify-between  items-center" >
         
-                <div  class="flex justify-between items-center" style="width: 250px;padding: 10px 25px;border-radius: 5px;color: rgb(0,0,0);border: 1px solid #F2F2F2 ;" ><svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <div  class="flex justify-between items-center" style="width: 250px;padding: 10px 25px;border-radius: 5px;color: rgb(0,0,0);border: 1px solid #F2F2F2 ;" >
+                <svg @click="qntyIncrementAndDecrement('decrement')"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer">
                   <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
                 </svg>
                 <span id="quantity-text" style="font-size: 18px;"><span ><span >   
                   
-
+                  {{ quantity }}
                   </span></span></span>
                   
-                  <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <svg @click="qntyIncrementAndDecrement('increment')" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer">
                   <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
                 </svg>
                 </div>
@@ -108,7 +121,7 @@
               
         
                  </div>
-              </section> -->
+              </section>
 
 
                 <WhatsappForm/>
@@ -140,7 +153,8 @@ export default {
             names: [],
             adtProducts: [],
             selectedProduct: [],
-            totalPrice:{'totalPrice':0}
+            totalPrice: { 'totalPrice': 0 },
+            quantity:1,
             
         }
     },
@@ -153,10 +167,19 @@ export default {
     },
     methods: {
         addToCart(product) {
-            this.adtProducts = [...this.adtProducts, { ...product, quantity: 1 }];
-            this.totalPrice.totalPrice = this.adtProducts.reduce((prev, current) => Number(prev) + Number(current.price * current.quantity), 0)  
-            
+            this.adtProducts = [...this.adtProducts, { ...product, quantity: this.quantity }];
+            this.totalPrice.totalPrice = this.adtProducts.reduce((prev, current) => Number(prev) + Number(current.price * current.quantity), 0)   
         },
+        qntyIncrementAndDecrement(type) {
+
+            if (type == 'increment') {
+                this.quantity++
+            } else if (type == 'decrement' && this.quantity > 1) {
+                this.quantity--
+            }
+        },
+
+
         
     },
     
