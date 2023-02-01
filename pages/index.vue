@@ -8,14 +8,14 @@ const { locale } = useI18n()
         <div class="container-fluid pl-0 pr-0" ><img class="w-full" src="~/assets/img/hero.png" ></div>
     </section>
 <div>
-    <form>
+    <!-- <form>
         <select v-model="locale">
-            <option value="en">en</option>
+           
             <option value="ar">ar</option>
         </select>
         <h1>{{ $t('hello') }}</h1>
         <p>{{ $t('welcome') }}</p>
-    </form>
+    </form> -->
 </div>
 
     <section class="text-end ">
@@ -42,9 +42,11 @@ const { locale } = useI18n()
                 </div>
                 <span class="flex text-center p-1 font-xs me-1"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">48,120</span></span></span>
             </div>
-            <h2  class="text-3xl red-700  mb-3"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Safwat Al Jouf olive oil</span></span></h2>
-            <h3  class="text-base mb-4"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Excellent virgin first squeeze</span></span></h3>
-            <p ><span class="text-base vertical-align: inherit;"><span class="vertical-align: inherit;">Safwat Al-Jouf olive oil, like pure gold, we picked from our best crops, our farms in Al-Jouf, where 100% organic extra-virgin olive oil is produced by first cold pressing.</span></span></p><img src="~/assets/img/Rectangle.png" class="w-full mt-5 ">
+            <h2  class="text-3xl red-700  mb-3"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">زيت زيتون صفوة الجوف
+            </span></span></h2>
+            <h3  class="text-base mb-4"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">بكر ممتاز عصرة اولى
+            </span></span></h3>
+            <p ><span class="text-base vertical-align: inherit;"><span class="vertical-align: inherit;">زيت زيتون صفوة الجوف، بمثابة الذهب الخالص، انتقيناه من أفضل محاصيلنا مزارعنا بالجوف، حيث يتم إنتاج زيت زيتون بكرة عضوي ١٠٠٪ عصرة أولى على البارد.</span></span></p><img src="~/assets/img/Rectangle.png" class="w-full mt-5 ">
         </div>
     </section>
     
@@ -54,7 +56,7 @@ const { locale } = useI18n()
 
     <section class="mt-4 text-end ">
         <div class="container" >
-            <h3 class="text-base font-bold mb-4">Width</h3>
+            <h3 class="text-base font-bold mb-4">العرض</h3>
             <div  class=" mb-14 truncate"  >                 
 
             <section class="flex">
@@ -63,18 +65,18 @@ const { locale } = useI18n()
                 <div v-for="product in products" :key="product.id" class=" prbt  " >
                     
                         
-                        <div class="cprbt " >
-                            <div class=" prdtgg   "  >
-                                <div class=" mt-2  "  >
-                                    <div class=" prdimg1 w-20  "><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >4 liters</span></span><br></span></div>
-                                    <div class=" prdimg2 w-20  " ><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >4 liters</span></span><br></span></div>
-                                    <div class=" prdimg3 w-20 " ><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >4 liters</span></span><br></span></div>
+                        <div class="cprbt max-w-full" >
+                            <div class=" prdtgg  max-w-full "  >
+                                <div class=" mt-2 max-w-full "  >
+                                    <div class=" prdimg1 w-20  "><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >{{product.namEe}}</span></span><br></span></div>
+                                    <div class=" prdimg2 w-20  " ><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >{{product.namEe}}</span></span><br></span></div>
+                                    <div class=" prdimg3 w-20 " ><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >{{product.namEe}}</span></span><br></span></div>
                                 </div>
                                 <div class="mt-28">
                                     <h3 class="text-base mr-2">{{ product.name }}</h3>
                                     <h4 class="text-xs mr-2">{{ product.description }}</h4>
-                                    <p class="text-gray-500 font-normal mr-1 mt-2 text-base line-through">SAR {{product.DiscountPrice}}</p>
-                                    <p class="text-base font-medium mr-1  text-red-700 cursor-auto ">SAR {{ product.price }}</p>
+                                    <p class="text-gray-500 font-normal mr-1 mt-2 text-base line-through">ر.س {{product.DiscountPrice}}</p>
+                                    <p class="text-base font-medium mr-1  text-red-700 cursor-auto ">ر.س {{ product.price }}</p>
                                     
                                 </div>
                                 
@@ -115,7 +117,7 @@ const { locale } = useI18n()
                
                
                            
-                <h3 class="text-base font-bold "><span ><span >Quantity</span></span></h3>
+                <h3 class="text-base font-bold "><span ><span >الكمية</span></span></h3>
                  </div>
              
               

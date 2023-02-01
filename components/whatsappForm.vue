@@ -3,10 +3,11 @@
     <section class="text-end">
         <div style="border-bottom: 1px solid #F2F2F2;margin-top: 25px;margin-bottom: 15px;" ></div>
             
-            <h3 style="font-size: 16px;font-weight: bold;"><span><span >Save this offer for later</span></span></h3>
+            <h3 style="font-size: 16px;font-weight: bold;"><span><span >حفظ هذا العرض لوقت لاحق
+            </span></span></h3>
 
-            <button class="flex justify-center  bg-gray-200 dc-btn-2 " @click="isShow = !isShow">  <img class="wtsapimg mx-1 h-5" src="~/assets/img/009-whatsapp.png" alt=""> Send it to me via WhatsApp</button>
-            <div v-show="isShow">
+            <button class="flex justify-center  bg-gray-200 dc-btn-2 " @click="isShow = !isShow">  <img class="wtsapimg mx-1 h-5" src="~/assets/img/009-whatsapp.png" alt=""> <a href="https://wa.me/212612086755">ارسله لي عبر الوتس اب</a></button>
+            <!-- <div v-show="isShow">
             <div style="border-bottom: 1px solid #F2F2F2;margin-top: 25px;margin-bottom: 15px;" class="mb-4" ></div>
             <div class="container text-center" >
                 <div class=" border-solid border-2  border-slate-100 rounded-lg  px-2 pb-3" >
@@ -15,13 +16,13 @@
                        
 
                         
-                        <div class="mt-3"><button @submit.prevent="whatsapp" class="dc-btn"><a href="https://wa.me/212609932443">Send Massage</a></button></div>
+                        <div class="mt-3"><button @submit.prevent="whatsapp" class="dc-btn"><a href="https://wa.me/212612086755">Send Massage</a></button></div>
                         
                     </form>
                 </div>
             </div>
 
-           </div>
+           </div> -->
     </section>
 
 

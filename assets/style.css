@@ -96,6 +96,7 @@ body{
     padding: 0 4px;
     left: 26px;
     top: -5px;
+    
 }
 
 
@@ -106,12 +107,13 @@ body{
     text-transform: none;
     margin-left: 8px;
     border: solid 1px #ddd;
+    width: 136px;
 }
 
 .cprbt {
     cursor: pointer;
     transform: translate3d(0px, 0px, 0px);
-    
+   
 }
 
 .prdimg1{
@@ -136,8 +138,8 @@ swiper-slide.active {
     background-color: red;
     position: absolute;
     z-index: 1;
-    height: 225px;
-    width: 136px;
+    height: 222px;
+   width: 132px;
     margin-top: -243px;
     opacity: 1%;
     border-radius: 10px;
@@ -151,8 +153,8 @@ swiper-slide.active {
     background-color: green;
     position: absolute;
     z-index: 1;
-    height: 225px;
-    width: 136px;
+    height: 222px;
+    width: 132px;
     margin-top: -243px;
     opacity: 4%;
     border-radius: 10px;
