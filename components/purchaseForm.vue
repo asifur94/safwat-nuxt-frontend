@@ -11,34 +11,53 @@
                     </span></span></h1>
                     <form @submit.prevent="purchase" class="text-end">
                         <div  class="mb-2   selt-frm  " >
-                            <input v-model="name" class=" pr-3 w-full pl-8 py-3" type="text" placeholder="The name" style="background: #f2f2f2;border-style: none;"></div>
+                            <input v-model="name" class=" pr-3 w-full pl-8 py-3" type="text" placeholder="الاسم" style="background: #f2f2f2;border-style: none;"></div>
                         <div class="mb-2 relative  selt-frm "  ><input v-model="phone" class=" pr-3 w-full pl-8 form-control py-3" type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
                             <div class="flex items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;" ><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">05&nbsp;&nbsp;</span></span></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
                         </div>
                         <div class="mb-2 frm-s form-select relative py-3 pr-3 pl-8 selt-frm " >
                             <select v-model="address" class="w-full text-end" style="background: #f2f2f2;border-style: none;">
-                                <option value="Jaddah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Riyadh</span></span></option>
-                                <option value="Makkah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Jeddah</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Mecca</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Medina</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Ad Dammam</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Al Hufuf</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Buraydah</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Al Ḩillah</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Aţ Ţaif</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Tabuk</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Khamis Mushayt</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Ḩail</span></span></option>
-                                <option value="Jaddah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Al Qatif</span></span></option>
-                                <option value="Makkah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Al Mubarraz</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Al Kharj</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Najran</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Yanbu</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Abha</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Arar</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Jazan</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Sakaka</span></span></option>
-                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">Al Bahah</span></span></option>
+                                <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">الرياض</span></span></option>
+                                <option value="Medina"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">مدينة</span></span></option>
+                                <option value="Jeddah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">جدة </span> </span></option>
+                                <option value="Dammam"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">الدمام </span></span></option>
+                                <option value="Tabuk"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">تبوك</span></span></option>
+                               <option value="Taif"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الطائف</span></span></option>
+                                <option value="Mecca"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">مكه</span></span></option>
+                                <option value="Najran"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> نجران</span></span></option>
+                                <option value="Hail"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> مدينة حائل</span></span></option>
+                                <option value="Buraidah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">بريدة </span></span></option>
+                                <option value="Jazan"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">  جازان </span></span></option>
+                                <option value="Khamis Mushayt"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">خميس مشيط  </span></span></option>
+
+                                <option value="Al-Hofuf"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الهفوف  </span></span></option>
+                                <option value="Al Qatif"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">  القطيف </span></span></option>
+                                <option value="Abha"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> أبها</span></span></option>
+                                <option value="Sakaka"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">سكاكا </span></span></option>
+                                <option value="Al Khobar"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الخبر</span></span></option>
+                                <option value="Al Bahah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">الباحة </span></span></option>
+                                <option value="Dhahran"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الظهران</span></span></option>
+                                <option value="Al Kharj"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الخرج</span></span></option>
+                                
+                                <option value="Al Jubail"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الجبيل</span></span></option>
+                                <option value="Hafar Al Batin"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">حفر الباطن </span></span></option>
+                                <option value="Ras Tanura"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> رأس تنورة</span></span></option>
+                                <option value="Turaif"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">طريف </span></span></option>
+                                <option value="Al Duwadimi"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">  الدوادمي </span></span></option>
+                               <option value="Duba"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">  ضباء </span></span></option>
+                                <option value="Rabigh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> رابغ</span></span></option>
+                                <option value="Arar"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">  عرعر </span></span></option>
+                                <option value="Badr"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">  بدر </span></span></option>
+                                <option value="Ar Rass"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الرس</span></span></option>
+                                <option value="Al Wajh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">  الوجه </span></span></option>
+                                <option value="Az Zulfi"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الزلفي</span></span></option>
+                                <option value="Al Qurayyat"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> القريات  </span></span></option>
+                                <option value="Khafji"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> الخفجي  </span></span></option>
+                                <option value="Bisha"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">  بيشة </span></span></option>
+                                <option value="Al-Namas"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> النماص</span></span></option>
+                                <option value="Umluj"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> أملج</span></span></option>
+                                <option value="Unaizah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">عنيزة </span></span></option>
+                                
                        </select><i class="fas fa-chevron-down" style="position: absolute;top: 50%;transform: translateY(-50%);left: 20px;"></i></div>
     
                         <div v-for="product in products" :key="product.id" class="frm-s flex justify-between selt-frm-txt mt-3"  >
@@ -62,9 +81,7 @@
                             </span>
                         </div>
                         <div class="flex justify-between selt-frm-txt mt-3"  ><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">السعر شامل الضريبة</span></span></span><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">100 ر.س</span></span></span></div>
-                        <div class="flex justify-between selt-frm-txt mt-3"  ><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">الشحن السريع
-                        </span></span></span><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">مجاني
-                        </span></span></span></div>
+                        <div class="flex justify-between selt-frm-txt mt-3"  ><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">الشحن السريع</span></span></span><span><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">مجاني</span></span></span></div>
                         <div class="selt-frm-txt-d "  ></div>
                         <div class="flex justify-between selt-frm-txt mt-3"  ><span style="font-weight: bold;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">الاجمالي
                         </span></span></span><span class="font-weight: bold;"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">{{ totalPrice.totalPrice }} ر.س</span></span></span></div>

@@ -1,4 +1,28 @@
 {
   "name": "Hello",
-  "number": "Welcome"
+  "number": "Welcome",
+
+ " Riyadh": " Riyadh",
+  "Jeddahh" :"Jeddahh",
+  "Mecca":"Mecca",
+  "Medina":"Medina",
+  "Ad Dammam" :"Ad Dammam",
+ "Al Hufuf":"Al Hufuf",
+  "Buraydah" :"Buraydah",
+  "Al Hillah": "Al Hillah",
+ " At Taif":" At Taif",
+ " Tabuk":" Tabuk",
+  "Khamis Mushayt": "Khamis Mushayt",
+ " Hail":" Hail",
+  "Al Qatif" :"Al Qatif",
+  "Al Mubarraz":"Al Mubarraz",
+ " Al Kharj":" Al Kharj",
+  "Najran":"Najran",
+  "Yanbu":"Yanbu",
+ " Abha": " Abha",
+ " Arar":" Arar",
+ " Jaazan": " Jaazan",
+  "Sakaka": "Sakaka",
+  "Al Bahah" : "Al Bahah"
+
 }
