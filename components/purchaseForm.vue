@@ -1,5 +1,5 @@
 <template>
-    <section class="text-end">
+   <section class="text-end px-2">
         <div  class="swiper-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-free-mode swiper-rtl swiper-backface-hidden mb-14 truncate"  >                 
 
         <div class="container mt-3"><button class="dc-btn" @click="isShow = !isShow">اطلبه الآن</button></div> 
@@ -110,7 +110,7 @@
     </section>
     
 
-    <section class="text-end  frmbtm  mt-(-48) pt-48">
+    <section class="text-end px-2 frmbtm  mt-(-48) pt-48">
         <div class="container" style="padding-bottom: 38px;" >
             <h2 style="color: #343434;" class="text-4xl flex justify-end mb-3 mt-5"><span ><span >لماذا صفوة الجوف؟
             </span></span></h2>
