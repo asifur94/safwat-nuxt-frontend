@@ -19,7 +19,8 @@
                     </span></span></h1>
                     <form @submit.prevent="purchase" class="text-end">
                         <div  class="mb-2   selt-frm  " >
-                            <input v-model="name" class=" pr-3 w-full pl-8 py-3 text-end" type="text" placeholder="الاسم" style="background: #f2f2f2;border-style: none;"></div>
+                            <input v-model="name" class=" pr-3 w-full pl-8 py-3 text-end" type="text" placeholder="الاسم" style="background: #f2f2f2;border-style: none;">
+                        </div>
                         <div class="mb-2 relative  selt-frm "  ><input v-model="phone" class=" pr-3 w-full pl-8 form-control py-3" type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
                             <div class="flex items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;" ><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">05&nbsp;&nbsp;</span></span></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
                         </div>
@@ -66,9 +67,12 @@
                                 <option value="Umluj"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> أملج</span></span></option>
                                 <option value="Unaizah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">عنيزة </span></span></option>
                                 
-                       </select ><i class="fas fa-chevron-down" style="position: absolute;top: 50%;transform: translateY(-50%);left: 20px;"></i></div>
-    
-                        <div v-for="product in products" :key="product.id" class="frm-s flex justify-between selt-frm-txt mt-3"  >
+                       </select ><i class="fas fa-chevron-down" style="position: absolute;top: 50%;transform: translateY(-50%);left: 20px;"></i>
+                        </div>
+                        <div  class="mb-2   selt-frm  " >
+                            <input v-model="Staddress" class=" pr-3 w-full pl-8 py-3 text-end" type="text" placeholder="عنوان الشارع" style="background: #f2f2f2;border-style: none;">
+                        </div>
+                       <div v-for="product in products" :key="product.id" class="frm-s flex justify-between selt-frm-txt mt-3"  >
                             <span>
                                 <span class="vertical-align: inherit;">
                                     <span class="vertical-align: inherit;">
@@ -103,7 +107,7 @@
             </div>
          </div>
     </div>
-      
+     
    
     </section>
 
@@ -166,6 +170,7 @@ export default {
             name: '',
             phone: '',
             address: '',
+            Staddress: '',
             message: '',
         };
     },
@@ -196,11 +201,13 @@ export default {
                           name: this.name,
                           phone_number: this.phone,
                           address: this.address,
+                          Staddress: this.Staddress,
                           selectedProducts: this.products,
                       })
                           this.name = '',
                           this.phone = '',
-                          this.address = '',
+                              this.address = '',
+                              this.Staddress = '',
                           this.message = response.data.message
                       console.log(response)
                   } catch (error) {

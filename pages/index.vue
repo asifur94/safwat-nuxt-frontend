@@ -53,10 +53,10 @@
                          <div class=" prdimg3 w-20" ><img class="w-full" :src="product.image" ><span class=" absolute prdtbg "><span ><span >{{product.namEe}}</span></span><br></span></div>
                        </div>
                        <div class="mt-28 text-end">
-                         <h3 class="text-base mr-2">{{ product.name }}</h3>
-                         <h4 class="text-xs mr-2">{{ product.description }}</h4>
-                         <p class="text-gray-500 font-normal mr-1 mt-2 text-base line-through">ر.س {{product.DiscountPrice}}</p>
-                         <p class="text-base font-medium mr-1  text-red-700 cursor-auto ">ر.س {{ product.price }}</p>
+                         <h3 class="text-base px-1 mr-2">{{ product.name }}</h3>
+                         <h4 class="text-xs px-1 mr-2">{{ product.description }}</h4>
+                         <p class="text-gray-500 px-1 font-normal mr-1 mt-2 text-base line-through">ر.س {{product.DiscountPrice}}</p>
+                         <p class="text-base px-1 font-medium mr-1  text-red-700 cursor-auto ">ر.س {{ product.price }}</p>
 
                        </div>
 

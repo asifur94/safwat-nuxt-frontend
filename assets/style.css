@@ -104,8 +104,8 @@ body {
 
 
 .prdtgg {
-    background-color: rgb(242, 242, 242 );
-    border-radius: 8px;
+    /* background-color: rgb(242, 242, 242 ); */
+    border-radius: 10px;
     height: 230px;
     text-transform: none;
     margin-left: 8px;
@@ -121,28 +121,28 @@ body {
 }
 
 .prdimg1{
-    position: absolute;width: 60px;left: 50px;
+    position: absolute;width: 80px;left: 35px;
 }
 
 .prdimg2{
-    position: absolute;width: 60px;left: 90px;
+    position: absolute;width: 80px;left: 80px;
 }
 
 .prdimg3{
-    position: absolute;width: 60px;left: 70px;top: 25px;
+    position: absolute;width: 80px;left: 60px;top: 25px;
 }
 
 
   .befrcrt:before {
     content: "";
     
-    background-color: red;
+    background-color: gray;
     position: absolute;
     z-index: 1;
     height: 229px;
    width: 141px;
     margin-top: -123px;
-    opacity: 2%;
+    opacity: 10%;
     border-radius: 10px;
     top: 122px;
 }
@@ -157,13 +157,13 @@ body {
 .aftercrt:after {
     content: "";
    
-    /* background-color: green; */
+    /* background-color: white; */
     position: absolute;
     z-index: 1;
     height: 229px;
     width: 141px;
     margin-top: -121px;
-    opacity: 100%;
+    /* opacity: 20%; */
     border-radius: 10px;
     top: 122px;
     border: 1px solid #000;
