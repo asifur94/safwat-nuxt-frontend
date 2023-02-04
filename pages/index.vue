@@ -28,11 +28,11 @@
                                         
                                     
                 </div>
-                <span class="flex text-center p-1 font-xs me-1"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">48,120</span></span></span>
+                <span class="flex text-center p-2 text-xs me-1"><span class="vertical-align: inherit;"><span class="text-xs vertical-align: inherit;">48,120</span></span></span>
             </div>
-            <h2  class="text-3xl red-700  mb-3"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">زيت زيتون صفوة الجوف</span></span></h2>
-            <h3  class="text-base mb-4"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">بكر ممتاز عصرة اولى</span></span></h3>
-            <p ><span class="text-base vertical-align: inherit;"><span class="vertical-align: inherit;">زيت زيتون صفوة الجوف، بمثابة الذهب الخالص، انتقيناه من أفضل محاصيلنا مزارعنا بالجوف، حيث يتم إنتاج زيت زيتون بكرة عضوي ١٠٠٪؜ عصرة أولى على البارد.</span></span></p><img src="~/assets/img/Rectangle.png" class="w-full mt-5 ">
+            <h2  class="text-3xl red-700 px-2  mb-3"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">زيت زيتون صفوة الجوف</span></span></h2>
+            <h3  class="text-base px-2 mb-4"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">بكر ممتاز عصرة اولى</span></span></h3>
+            <p  class="px-2"><span class="text-base px-2 vertical-align: inherit;"><span class="vertical-align: inherit;">زيت زيتون صفوة الجوف، بمثابة الذهب الخالص، انتقيناه من أفضل محاصيلنا مزارعنا بالجوف، حيث يتم إنتاج زيت زيتون بكرة عضوي ١٠٠٪؜ عصرة أولى على البارد.</span></span></p><img src="~/assets/img/Rectangle.png" class="w-full mt-5 px-2">
         </div>
     </section>
     
@@ -40,7 +40,8 @@
 
     <section class="mt-4  text-end">
         <div class="container mx-auto  " >
-            <h3 class="text-base px-2 font-bold mb-4">العرض</h3>
+            <h3 class="text-base px-3 font-bold  mb-4">العرض</h3>
+            
             <div  class=" mb-14 truncate ">
                <carousel :settings="settings" :breakpoints="breakpoints">
                  <Slide v-for="product in products" :key="product.id" class="prbt  " >
@@ -85,17 +86,15 @@
                   <div class="flex justify-between  items-center" >
         
                 <div  class="flex justify-between items-center" style="width: 250px;padding: 10px 25px;border-radius: 5px;color: rgb(0,0,0);border: 1px solid #F2F2F2 ;" >
-                <svg @click="qntyIncrementAndDecrement('decrement')"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer">
-                  <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
-                </svg>
-                <span id="quantity-text" style="font-size: 18px;"><span ><span >   
+                 <font-awesome-icon icon="fa-duotone fa-check" />
+                  <img @click="qntyIncrementAndDecrement('increment')" class="plus.svg" src="~/assets/img/plus-solid.svg" alt="">
+                       <span id="quantity-text" style="font-size: 18px;"><span ><span >   
                   
                   {{ quantity }}
                   </span></span></span>
+                  <img @click="qntyIncrementAndDecrement('decrement')" class="plus.svg text-red" src="~/assets/img/minus-solid.svg" alt="">
                   
-                  <svg @click="qntyIncrementAndDecrement('increment')" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer">
-                  <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
-                </svg>
+                  
                 </div>
                
                
@@ -109,7 +108,7 @@
               </section>
 
 
-                <WhatsappForm/>
+               
 
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
@@ -117,13 +116,17 @@
         </div>
     </section>
 
-    <PurchaseForm :products="adtProducts" :totalPrice="totalPrice" />
 
+
+    
+    <PurchaseForm :products="adtProducts" :totalPrice="totalPrice" />
+    
 <review/>
 </template>
 
 
 <script>
+
  import axios from 'axios';
  import '~/assets/carousel.css'
  import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
