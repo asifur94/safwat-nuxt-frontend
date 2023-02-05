@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    css: ['~/assets/style.css'],
+  css: ['~/assets/style.css',
+  
+  ],
       postcss: {
           plugins: {
             tailwindcss: {},
@@ -11,7 +13,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n'
   ],
-  
+  plugins: [
+    { src: '~/plugins/fontawesome.js' },
+  ],
   
   i18n: {
    defaultLocale: 'en',

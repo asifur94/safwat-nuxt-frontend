@@ -9,18 +9,20 @@
             <button class="flex justify-center  bg-gray-200 dc-btn-2 " @click="isShow = !isShow">  <img class="wtsapimg mx-1 h-5" src="~/assets/img/009-whatsapp.png" alt="">ارسله لي عبر الوتس اب</button>
             <div v-show="isShow">
             <div style="border-bottom: 1px solid #F2F2F2;margin-top: 25px;margin-bottom: 15px;" class="mb-4" ></div>
-            <div class="container text-center" >
-                <div class=" " >
-                    <form class="text-end flex ">
-                        <div class="  h-20px   flex-1 border-solid border-2  border-slate-100 rounded-lg    " ><input class=" w-full px-8 " type="number" placeholder="أدخل رقمك" style="background: #f2f2f2;border-style: none;">
+            <div class="container " >
+                
+                    <div class=" flex justify-between">
+                        
+                        <div class=" relative w-full selt-frmmm "  >
+                            <input class="h-4 py-3 w-full whtsinp " type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
+                            <div class="flex   items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;  #f2f2f2;border-style: none;" ><span>05&nbsp;&nbsp;</span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
                         </div>
-                       
 
                         
-                        <div class="flex-1  w-3 wtsbtnbck bg-gray-400"><button @submit.prevent="whatsapp" class="wtsbtn"><img src="~/assets/img/003-check.png" alt=""></button></div>
+                        <a href=""><img class="wtsim" src="~/assets/img/wts.png" alt=""> </a>
                        
-                    </form>
-                </div>
+                    </div>
+                
             </div>
 
            </div>

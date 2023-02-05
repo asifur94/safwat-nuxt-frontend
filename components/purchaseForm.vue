@@ -5,7 +5,7 @@
     
         <div  class="swiper-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-free-mode swiper-rtl swiper-backface-hidden mb-14 truncate"  >                 
 
-        <div class="container mt-3"><button class="dc-btn" @click="isShow = !isShow">اطلبه الآن</button></div> 
+        <div class="container mt-3"><button class="dc-btn border rounded-lg" @click="isShow = !isShow">اطلبه الآن</button></div> 
 
             <WhatsappForm/>
 
@@ -19,13 +19,18 @@
                     </span></span></h1>
                     <form @submit.prevent="purchase" class="text-end">
                         <div  class="mb-2   selt-frm  " >
-                            <input v-model="name" class=" pr-3 w-full pl-8 py-3 text-end" type="text" placeholder="الاسم" style="background: #f2f2f2;border-style: none;">
+                            <input v-model="name" class=" pr-3 w-full border rounded-lg pl-8 py-3.5 text-end" type="text" placeholder="الاسم" style="background: #f2f2f2;border-style: none;">
                         </div>
-                        <div class="mb-2 relative  selt-frm "  ><input v-model="phone" class=" pr-3 w-full pl-8 form-control py-3" type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
+                        <div class="mb-2 relative border rounded-lg selt-frm "  ><input v-model="phone" class=" pr-3 border rounded-lg w-full pl-8 form-control py-3.5" type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
                             <div class="flex items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;" ><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">05&nbsp;&nbsp;</span></span></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
                         </div>
-                        <div class="mb-2 frm-s form-select relative py-3 pr-3 pl-8 selt-frm " >
-                            <select v-model="address" class="w-full text-end"  style="background: #f2f2f2;border-style: none;">
+
+                        
+                        
+                        <div class="mb-2 relative  selt-frm "  >
+                            
+                            <select v-model="address"  class="w-full border rounded-lg py-4 relative text-start"  style="background: #f2f2f2;border-style: none;"> 
+                                <option class="text-end  text-gray-400" value="" disabled selected> <span >   مدينة  </span>     </option> 
                                 <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">الرياض</span></span></option>
                                 <option value="Medina"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">مدينة</span></span></option>
                                 <option value="Jeddah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">جدة </span> </span></option>
@@ -67,10 +72,14 @@
                                 <option value="Umluj"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;"> أملج</span></span></option>
                                 <option value="Unaizah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">عنيزة </span></span></option>
                                 
-                       </select ><i class="fas fa-chevron-down" style="position: absolute;top: 50%;transform: translateY(-50%);left: 20px;"></i>
+                       </select >
+                       <font-awesome-icon icon="fa-solid fa-angle-down" />
+                       <p class="hdselop">.</p>
                         </div>
+
+                        
                         <div  class="mb-2   selt-frm  " >
-                            <input v-model="Staddress" class=" pr-3 w-full pl-8 py-3 text-end" type="text" placeholder="عنوان الشارع" style="background: #f2f2f2;border-style: none;">
+                            <input v-model="Staddress" class=" pr-3 border rounded-lg w-full pl-8 py-3.5 text-end" type="text" placeholder="عنوان الشارع" style="background: #f2f2f2;border-style: none;">
                         </div>
                        <div v-for="product in products" :key="product.id" class="frm-s flex justify-between selt-frm-txt mt-3"  >
                             <span>
@@ -130,25 +139,19 @@
               </p>
             <div >
                 <h2 style="font-size: 30px;color: #343434;" class="mb-3 px-2 flex justify-end mt-4"><span ><span >&nbsp; جودة المحاصيل
-                </span></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 flex justify-end chk-icn h-6">
-                    <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                  </svg></h2>
+                </span></span><font-awesome-icon icon="fa-solid fa-check" class="fnaicn"/></h2>
                 <p class="flex justify-end px-2" style="font-size: 16px;color: #343434;"><span ><span >في مزرعتنا أكثر من ٨٠٠,٠٠٠ شجرة زيتون ُتنتج أفضل محصول سنوياً، ومع ذلك نقوم بجرد المحصول لاستبعاد حبات الزيتون المعيبة لضمان أفضل زيت وقت العصر.</span></span>
                   </p>
             </div>
             <div >
                 <h2 style="font-size: 30px;color: #343434;" class="mb-3 px-2 flex justify-end mt-3"><span ><span >&nbsp; حموضة أقل
-                </span></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 flex justify-end chk-icn h-6">
-                    <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                  </svg></h2>
+                </span></span><font-awesome-icon icon="fa-solid fa-check" class="fnaicn"/></h2>
                 <p class="flex justify-end px-2" style="font-size: 16px;color: #343434;"><span ><span >زيت صفوة الجوف إضافة شهية لأطباقك تنقل نكهتها لمرحلة مختلفة من اللذة، بفضل طعمه الممتاز الخالي من المرارة.</span></span>
                   </p>
             </div>
             <div >
                 <h2 style="font-size: 30px;color: #343434;" class="mb-3 px-2 flex justify-end mt-3"><span ><span >&nbsp; طعم مميز
-                </span></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 flex justify-end chk-icn h-6">
-                    <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                  </svg></h2>
+                </span></span><font-awesome-icon icon="fa-solid fa-check" class="fnaicn"/></h2>
                 <p class="flex justify-end px-2" style="font-size: 16px;color: #343434;"><span ><span >زيت صفوة الجوف إضافة شهية لأطباقك تنقل نكهتها لمرحلة مختلفة من اللذة، بفضل طعمه الممتاز الخالي من المرارة.</span></span>
                   </p>
             </div>

@@ -28,7 +28,7 @@
                                         
                                     
                 </div>
-                <span class="flex text-center p-2 text-xs me-1"><span class="vertical-align: inherit;"><span class="text-xs vertical-align: inherit;">48,120</span></span></span>
+                <span class="flex text-center text-gray-500 p-2 text-xs me-1"><span class="vertical-align: inherit;"><span class="text-xs vertical-align: inherit;">48,120</span></span></span>
             </div>
             <h2  class="text-3xl red-700 px-2  mb-3"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">زيت زيتون صفوة الجوف</span></span></h2>
             <h3  class="text-base px-2 mb-4"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">بكر ممتاز عصرة اولى</span></span></h3>
@@ -79,24 +79,20 @@
                  </template>
                </carousel>
 
-
+               
               
             <section  >
                 <div class="d-flex justify-content-between align-items-center" >
                   <div class="flex justify-between  items-center" >
         
-                <div  class="flex justify-between items-center" style="width: 250px;padding: 10px 25px;border-radius: 5px;color: rgb(0,0,0);border: 1px solid #F2F2F2 ;" >
-                 <font-awesome-icon icon="fa-duotone fa-check" />
-                  <img @click="qntyIncrementAndDecrement('increment')" class="plus.svg" src="~/assets/img/plus-solid.svg" alt="">
-                       <span id="quantity-text" style="font-size: 18px;"><span ><span >   
-                  
-                  {{ quantity }}
-                  </span></span></span>
-                  <img @click="qntyIncrementAndDecrement('decrement')" class="plus.svg text-red" src="~/assets/img/minus-solid.svg" alt="">
-                  
-                  
-                </div>
-               
+
+                    <div  class="flex justify-between items-center" style="width: 250px;padding: 10px 25px;border-radius: 5px;color: rgb(0,0,0);border: 1px solid #F2F2F2 ;" >
+                      <font-awesome-icon icon="fa-solid fa-plus" @click="qntyIncrementAndDecrement('increment')" class="fnicn"/>
+                       
+                      {{ quantity }}
+                       <font-awesome-icon icon="fa-solid fa-minus" @click="qntyIncrementAndDecrement('decrement')" class="fnicn"/>
+                       
+                     </div>
                
                            
                 <h3 class="text-base px-2 font-bold "><span ><span >الكمية</span></span></h3>
@@ -145,7 +141,7 @@ export default {
             adtProducts: [],
             selectedProduct: [],
             totalPrice: { 'totalPrice': 0 },
-            quantity: 1,
+            quantity: '',
 
 
           settings: {
@@ -197,3 +193,4 @@ export default {
 };
 
 </script>
+
