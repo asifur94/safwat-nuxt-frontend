@@ -79,7 +79,7 @@
                  </template>
                </carousel>
 
-               
+              
               
             <section  >
                 <div class="d-flex justify-content-between align-items-center" >
@@ -95,7 +95,7 @@
                      </div>
                
                            
-                <h3 class="text-base px-2 font-bold "><span ><span >الكمية</span></span></h3>
+                <h3 class="text-base px-3 font-bold "><span ><span >الكمية</span></span></h3>
                  </div>
              
               

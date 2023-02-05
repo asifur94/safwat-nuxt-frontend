@@ -5,14 +5,14 @@
     
         <div  class="swiper-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-free-mode swiper-rtl swiper-backface-hidden mb-14 truncate"  >                 
 
-        <div class="container mt-3"><button class="dc-btn border rounded-lg" @click="isShow = !isShow">اطلبه الآن</button></div> 
+        <div  class="container mt-3"><button class="dc-btn border rounded-lg" ><a href="#first-section">      اطلبه الآن   </a></button></div> 
 
             <WhatsappForm/>
 
 
 
-        <div class="container" style="border-bottom: 1px solid #F2F2F2;margin-top: 25px;margin-bottom: 15px;" ></div>
-           <div v-show="isShow" >
+        <div id="first-section" class="container" style="border-bottom: 1px solid #F2F2F2;margin-top: 25px;margin-bottom: 15px;" ></div>
+           <main  id="second-section">
             <div class="container text-center" >
                 <div class=" border-solid border-2  border-slate-100 rounded-lg  px-2 pb-3" >
                     <h1 class=" text-2xl text-center mb-4 mt-3"><span><span>اطلبه الآن
@@ -21,16 +21,16 @@
                         <div  class="mb-2   selt-frm  " >
                             <input v-model="name" class=" pr-3 w-full border rounded-lg pl-8 py-3.5 text-end" type="text" placeholder="الاسم" style="background: #f2f2f2;border-style: none;">
                         </div>
-                        <div class="mb-2 relative border rounded-lg selt-frm "  ><input v-model="phone" class=" pr-3 border rounded-lg w-full pl-8 form-control py-3.5" type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
-                            <div class="flex items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;" ><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">05&nbsp;&nbsp;</span></span></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
+                        <div class="mb-2 relative border rounded-lg selt-frm "  ><input v-model="phone" class=" pr-3 border rounded-lg w-full pl-8 form-control py-3.5" type="text" placeholder="x xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
+                            <div class="flex items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;" ><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></span></span>&nbsp;&nbsp;05</div>
                         </div>
 
-                        
+                       
                         
                         <div class="mb-2 relative  selt-frm "  >
                             
-                            <select v-model="address"  class="w-full border rounded-lg py-4 relative text-start"  style="background: #f2f2f2;border-style: none;"> 
-                                <option class="text-end  text-gray-400" value="" disabled selected> <span >   مدينة  </span>     </option> 
+                            <select v-model="address"  class="w-full text-end border rounded-lg py-4  selt-frm"  > 
+                                <option class="text-end" value="" disabled selected>    مدينة      </option> 
                                 <option value="Riyadh"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">الرياض</span></span></option>
                                 <option value="Medina"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">مدينة</span></span></option>
                                 <option value="Jeddah"><span class="vertical-align: inherit;"><span class="vertical-align: inherit;">جدة </span> </span></option>
@@ -74,7 +74,7 @@
                                 
                        </select >
                        <font-awesome-icon icon="fa-solid fa-angle-down" />
-                       <p class="hdselop">.</p>
+                       <p class="hdselop"></p>
                         </div>
 
                         
@@ -93,9 +93,9 @@
                                 <span class="vertical-align: inherit;">
                                     <span class="vertical-align: inherit;">
                                      <div class="flex items-center gap-2">
-                                        <span @click="qntyIncrementAndDecrement(product.id,'increment')" class="bg-green-500 text-white py-1 px-2 rounded cursor-pointer">+</span>
+                                        <span @click="qntyIncrementAndDecrement(product.id,'increment')" class=" text-white py-1 px-2 rounded cursor-pointer">+</span>
                                         {{ product.quantity }}
-                                        <span @click="qntyIncrementAndDecrement(product.id,'decrement')" class="bg-red-500 py-1 text-white px-2 rounded cursor-pointer">-</span>
+                                        <span @click="qntyIncrementAndDecrement(product.id,'decrement')" class=" text-white px-2 rounded cursor-pointer">-</span>
                                      </div>
                                     </span>
                                 </span>
@@ -114,7 +114,7 @@
 
                 </div>
             </div>
-         </div>
+        </main>
     </div>
      
    
@@ -155,7 +155,7 @@
                 <p class="flex justify-end px-2" style="font-size: 16px;color: #343434;"><span ><span >زيت صفوة الجوف إضافة شهية لأطباقك تنقل نكهتها لمرحلة مختلفة من اللذة، بفضل طعمه الممتاز الخالي من المرارة.</span></span>
                   </p>
             </div>
-            <div class=" mt-3"><button class="dc-btn">اطلبه الآن</button></div>
+            <div class=" mt-3"><button class="dc-btn"> <a href="#first-section">        اطلبه الآن    </a>  </button></div>
         </div>
     </section>
 
@@ -164,6 +164,7 @@
 
 
 <script>
+
 import axios from 'axios'
 export default {
     name: "ToggleDiv",
@@ -177,6 +178,9 @@ export default {
             message: '',
         };
     },
+
+   
+
 
     props: ['msg', 'products', 'totalPrice'],
     methods: {
@@ -227,3 +231,10 @@ export default {
 };
 
 </script>
+
+
+
+<style>
+
+
+</style>

@@ -14,8 +14,8 @@
                     <div class=" flex justify-between">
                         
                         <div class=" relative w-full selt-frmmm "  >
-                            <input class="h-4 py-3 w-full whtsinp " type="text" placeholder="xxx xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
-                            <div class="flex   items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;  #f2f2f2;border-style: none;" ><span>05&nbsp;&nbsp;</span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5"></div>
+                            <input class="h-4 py-3 w-full whtsinp " type="text" placeholder="x xxx xxx" style="background: #f2f2f2;border-style: none;padding-left: 83px;direction: ltr;">
+                            <div class="flex   items-center absolute" style="top: 50%;transform: translateY(-50%);left: 20px;  #f2f2f2;border-style: none;" ><span></span><img src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-400.png" class="w-5">&nbsp;&nbsp;05</div>
                         </div>
 
                         
