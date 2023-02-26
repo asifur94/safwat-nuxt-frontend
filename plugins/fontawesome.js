@@ -7,13 +7,13 @@ import {
 //   faCircleUser as fasCircleUser,
 //   faBars as fasBars,
 //     faHospital as fasHospital,
-    faPlus as faPlus,
-   faMinus as faMinus,
-    faCheck as faCheck,
-    
-    faAngleDown as faAngleDown,
+    faPlus as fasPlus,
+   faMinus as fasMinus,
+    faCheck as fasCheck,
+    faCircleCheck as fasCircleCheck,
+    faAngleDown as fasAngleDown,
     // faArrowTurnDownLeft as faArrowTurnDownLeft
-  
+ 
 } from '@fortawesome/free-solid-svg-icons'
 import {faDiscord as fabDiscord} from '@fortawesome/free-brands-svg-icons'
 
@@ -27,10 +27,11 @@ library.add(
 //   fasHospital,
 //   fasBars,
 //     fabDiscord,
-    faPlus,
-   faMinus,
-    faCheck,
-    faAngleDown,
+    fasPlus,
+   fasMinus,
+    fasCheck,
+  fasAngleDown,
+  fasCircleCheck
     // faArrowTurnDownLeft,
 )
 

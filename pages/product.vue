@@ -25,7 +25,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('http://sawfat-laravel.test/api/product')
+        axios.get('https://scales.agency/safwat-backend/public/api/product')
             .then(response => {
                 console.log(response.data);
                 this.products = response.data
